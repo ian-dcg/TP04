@@ -8,14 +8,14 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class TelaCadastraItem {
-	private static JFrame janela = new JFrame("Cadastra item");
-	private static JTextField tfNomeItem = new JTextField();
-	private static JTextField tfQuantidade = new JTextField();
-	private static JTextField tfUnidade = new JTextField();
-	private static JTextField tfPreco = new JTextField();
-	private static JTextField tfSetor = new JTextField();
-	private static JButton btnCriar = new JButton("Cadastrar");
-	private static JButton btnCancelar = new JButton("Cancelar");
+	private JFrame janela = new JFrame("Cadastra item");
+	private JTextField tfNomeItem = new JTextField();
+	private JTextField tfQuantidade = new JTextField();
+	private JTextField tfUnidade = new JTextField();
+	private JTextField tfPreco = new JTextField();
+	private JTextField tfSetor = new JTextField();
+	private JButton btnCriar = new JButton("Cadastrar");
+	private JButton btnCancelar = new JButton("Cancelar");
 	public TelaCadastraItem() {
 		
 		JLabel lblNewLabel = new JLabel("Novo Item");
