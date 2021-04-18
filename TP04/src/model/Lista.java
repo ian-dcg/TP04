@@ -3,10 +3,13 @@ package model;
 public class Lista  extends Mercado {
 	private String nomeLista;
 	private Itens [] itensRegistrados = new Itens[50];
+	int numItens = 0;
+	double ValorTotal = 0;
 	
 	
 	//Sobrecarga
 	public Lista (String nome) {
+		nome = "Minha Lista";
 		nomeLista = nome;
 	}
 	
@@ -17,7 +20,7 @@ public class Lista  extends Mercado {
 	}
 	
 	public String toString() {
-		return "Nome da Lista: " + nomeLista;
+		return nomeLista;
 	}
 	
 	public Itens[] getItens() {
@@ -37,6 +40,7 @@ public class Lista  extends Mercado {
 	}
 	
 	@Override
+	
 	public int getNumItens() {
 		return numItens;
 	}
@@ -52,15 +56,4 @@ public class Lista  extends Mercado {
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	
-	public String consultarItensRegistrados() {
-		String registro = "Lista de Itens Registrados; \n";
-		for (int i = 0; i < numItens; i++) {
-			System.out.println(i);
-			registro = registro + "\n" + itensRegistrados[i].toString();
-		}
-		
-		return registro;
-	}
-
 }

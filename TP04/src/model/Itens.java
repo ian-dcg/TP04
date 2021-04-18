@@ -5,12 +5,15 @@ public class Itens {
 	private double preco;
 	private boolean checkCarrinho;
 	private boolean checkCancelado;
-	private Unidade quantidade;
+	private Unidade unidade;
 	private Setor setor;
+	private String tipoUnidade;
+	private int quantidade;
 
 	//Sobrecarga
-	public Itens(String p, Unidade qtd, double val, Setor s, boolean check, boolean cCancelado) {
+	public Itens(String p, Unidade uni, int qtd, double val, Setor s, boolean check, boolean cCancelado) {
 		nomeProduto = p;
+		unidade = uni;
 		quantidade = qtd;
 		preco = val;
 		setor = s;
@@ -18,15 +21,16 @@ public class Itens {
 		checkCancelado = cCancelado;
 	}
 	
-	public Itens(String p, Unidade qtd, double val, Setor s) {
+	public Itens(String p, double val, String uni, int qtd, Setor s) {
 		nomeProduto = p;
+		tipoUnidade = uni;
 		quantidade = qtd;
 		preco = val;
 		setor = s;
 	}
 	
 	public String toString() {
-		return "Item: " + nomeProduto + " - R$: " + preco + ". (Setor: " + setor + "), " + quantidade;
+		return "Item: " + nomeProduto + " - R$: " + preco + ". (Setor: " + setor + "), " + unidade + quantidade + ". ";
 	}
 
 	public String getNomeProduto() {
@@ -35,6 +39,14 @@ public class Itens {
 
 	public void setNomeProduto(String nomeProduto) {
 		this.nomeProduto = nomeProduto;
+	}
+	
+	public String getTipoUnidade() {
+		return tipoUnidade;
+	}
+
+	public void setTipoUnidade(String tipoUnidade) {
+		this.tipoUnidade = tipoUnidade;
 	}
 
 	public double getPreco() {
@@ -54,10 +66,18 @@ public class Itens {
 	}
 	
 	public Unidade getUnidade() {
+		return unidade;
+	}
+
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
+	}
+	
+	public int getQuantidade() {
 		return quantidade;
 	}
 
-	public void setUnidade(Unidade quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
 
