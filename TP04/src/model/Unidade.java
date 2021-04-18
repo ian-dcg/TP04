@@ -2,13 +2,15 @@ package model;
 
 public class Unidade {
 	private String tipoUnidade;
+	private int quantidade;
 	
-	public Unidade(String u) {
+	public Unidade(String u, int qtd) {
 		tipoUnidade = u;
+		quantidade = qtd;
 	}
 	
 	public String toString() {
-		return tipoUnidade + ", ";
+		return quantidade + " - " + tipoUnidade + ". ";
 	}
 
 	public String getTipoUnidade() {
@@ -19,6 +21,12 @@ public class Unidade {
 		this.tipoUnidade = tipoUnidade;
 	}
 
-	
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
 
 }

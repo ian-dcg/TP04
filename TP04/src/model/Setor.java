@@ -9,11 +9,6 @@ public class Setor {
 		prioridade = prio;
 		
 	}
-	
-	public Setor(String cat) {
-		categoria = cat;
-		
-	}
 
 	public String getCategoria() {
 		return categoria;

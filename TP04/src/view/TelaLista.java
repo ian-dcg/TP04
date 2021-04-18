@@ -67,15 +67,15 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 		Object src = e.getSource();
 		
 		//Cadastro de novo item
-		/*if(src == cadastroItem)
-			new TelaDetalhePessoa().inserirEditar(1, dados, this, 0);
-		*/
+		if(src == cadastroItem)
+			new TelaCadastroItem().inserirEditar(2,/* dados,*/ this, 0);
+		
 
-		// Atualiza a lista de nomes de alunos mostrada no JList
-		/*if(src == refreshItem) {
-			listaItensCadastrados.setListData(new ControleAluno(dados).getNomeAluno());			
+		// Atualiza a lista de itens mostrados no JList
+		if(src == refreshItem) {
+			//listaItensCadastrados.setListData(new ControleAluno(dados).getNomeAluno());			
 			listaItensCadastrados.updateUI();
-		}*/
+		}
 
 
 
