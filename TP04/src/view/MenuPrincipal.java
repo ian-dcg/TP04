@@ -3,7 +3,7 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-//import controle.*;
+//import control.*;
 
 public class MenuPrincipal implements ActionListener {
 	
@@ -15,16 +15,12 @@ public class MenuPrincipal implements ActionListener {
 	public MenuPrincipal() {
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(120, 10, 150, 30);
-		//curso.setBounds(140, 100, 100, 30);
-		//prof.setBounds(140, 150, 100, 30);
 		lista.setBounds(127, 50, 130, 30);
 		
 		janela.setLayout(null);
 		
 		janela.add(titulo);
 		janela.add(lista);
-		//janela.add(curso);
-		//janela.add(prof);
 		
 		janela.setSize(400, 250);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -35,25 +31,13 @@ public class MenuPrincipal implements ActionListener {
 		MenuPrincipal menu = new MenuPrincipal();
 		
 		lista.addActionListener(menu);
-		//prof.addActionListener(menu);
-		//curso.addActionListener(menu);
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		
 		if(src == lista) {
-			new TelaLista().mostrarDados(/*dados,*/ 1);
+			new TelaLista().mostrarDados(/*dados*/);
 		}
-			
-		
-		/**if(src == prof)
-			new TelaPessoa().mostrarDados(dados, 2);
-		
-		if(src == curso)
-			JOptionPane.showMessageDialog(null, 
-					"Ainda precisam ser implementadas as funcionalidades\n"
-					+ "relacionadas a curso e a matrícula", null, 
-					JOptionPane.INFORMATION_MESSAGE);**/
 	}
 }

@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
-//import controle.*;
+//import control.*;
 
 
 public class TelaLista implements ActionListener, ListSelectionListener {		
@@ -15,12 +15,12 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 	private JList<String> listaItensCadastrados;
 	private String[] listaItens = new String[50];
 
-	public void mostrarDados(/*ControleDados d,*/ int op){
+	public void mostrarDados(/*ControleDados d*/){
 		//dados = d;
 
-		switch (op) {
-		case 1:// Mostrar dados de alunos cadastrados (JList)
-			//listaItens = new ControleAluno(dados).getNomeAluno();
+		
+			// Mostrar dados de alunos cadastrados (JList)
+			//listaItens = new ControleItens(dados).getNomeItens();
 			listaItensCadastrados = new JList<String>(listaItens);
 			janela = new JFrame("Lista");
 			titulo = new JLabel("Itens Cadastrados");
@@ -50,14 +50,6 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 			refreshItem.addActionListener(this);
 			listaItensCadastrados.addListSelectionListener(this);
 
-			break;
-
-
-		default:
-			JOptionPane.showMessageDialog(null,"Opção não encontrada!", null, 
-					JOptionPane.ERROR_MESSAGE);
-		}
-
 	}
 
 
@@ -68,12 +60,12 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 		
 		//Cadastro de novo item
 		if(src == cadastroItem)
-			new TelaCadastroItem().inserirEditar(2,/* dados,*/ this, 0);
+			new TelaCadastroItem().inserirEditar(1, /*dados,*/ this, 0);
 		
 
 		// Atualiza a lista de itens mostrados no JList
 		if(src == refreshItem) {
-			//listaItensCadastrados.setListData(new ControleAluno(dados).getNomeAluno());			
+			//listaItensCadastrados.setListData(new ControleItens(dados).getNomeItens());			
 			listaItensCadastrados.updateUI();
 		}
 
@@ -85,10 +77,10 @@ public class TelaLista implements ActionListener, ListSelectionListener {
 	public void valueChanged(ListSelectionEvent e) {
 		Object src = e.getSource();
 
-		/*if(e.getValueIsAdjusting() && src == listaItensCadastrados) {
-			new TelaDetalhePessoa().inserirEditar(3, dados, this, 
-					listaItensCadastrados.getSelectedIndex());
-		}*/
+		if(e.getValueIsAdjusting() && src == listaItensCadastrados) {
+			/*new TelaCadastroItem().inserirEditar(2, dados, this, 
+					listaItensCadastrados.getSelectedIndex()); */
+		}
 
 	}
 
